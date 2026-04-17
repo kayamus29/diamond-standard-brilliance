@@ -69,7 +69,7 @@ function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-cocoa font-semibold shadow-soft"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" /> Admissions 2025/26 open
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" /> Admissions Open
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 16 }}

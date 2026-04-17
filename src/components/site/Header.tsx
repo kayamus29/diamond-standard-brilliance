@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 import { Logo } from "./Logo";
 
 const NAV = [
@@ -49,9 +49,9 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+2348000000000" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
-            <Phone className="h-4 w-4" /> Call us
-          </a>
+          <Link to="/login" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary">
+            <LogIn className="h-4 w-4" /> Login
+          </Link>
           <Link
             to="/admissions"
             className="rounded-full bg-gradient-gold px-5 py-2.5 text-sm font-semibold text-gold-foreground shadow-gold transition-transform hover:-translate-y-0.5"
@@ -82,9 +82,16 @@ export function Header() {
               </Link>
             ))}
             <Link
+              to="/login"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-primary/20 bg-card px-5 py-3 text-center text-sm font-semibold text-primary"
+            >
+              <LogIn className="h-4 w-4" /> Login
+            </Link>
+            <Link
               to="/admissions"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-gradient-gold px-5 py-3 text-center text-sm font-semibold text-gold-foreground"
+              className="rounded-full bg-gradient-gold px-5 py-3 text-center text-sm font-semibold text-gold-foreground"
             >
               Apply Now
             </Link>
