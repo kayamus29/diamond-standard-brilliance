@@ -2,7 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { CTABanner } from "@/components/site/CTABanner";
 import portrait from "@/assets/student-portrait.jpg";
-import classroom from "@/assets/classroom.jpg";
+import groupPhoto from "@/assets/gallery/students-group.jpg";
+import { Music2, Flag, HandHeart } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -23,7 +24,7 @@ function AboutPage() {
       <PageHero eyebrow="About Us" title="A heritage of nurturing excellence." subtitle="Founded September 10, 2009 in Lugbe, Abuja — built on faith, character and academic rigor." />
 
       <section className="mx-auto max-w-7xl px-5 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <img src={classroom} alt="Classroom" loading="lazy" className="rounded-3xl shadow-elegant aspect-[4/3] object-cover" />
+        <img src={groupPhoto} alt="Diamond Standard pupils group photo" loading="lazy" className="rounded-3xl shadow-elegant aspect-[4/3] object-cover" />
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-cocoa font-semibold mb-3">Our Story</p>
           <h2 className="font-display text-4xl font-semibold text-primary text-balance">Built on a simple promise: every child matters.</h2>
@@ -37,16 +38,68 @@ function AboutPage() {
       </section>
 
       <section className="bg-secondary/60 py-20">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid md:grid-cols-2 gap-6">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid md:grid-cols-3 gap-6">
           {[
-            { t: "Vision", d: "To develop well-rounded, confident, and responsible individuals who contribute positively to society." },
-            { t: "Mission", d: "To inspire independence, hard work, integrity, and lifelong academic and moral excellence." },
+            { t: "Vision", d: "To create a unique institution focused on providing a world-class educational service of excellence at affordable cost." },
+            { t: "Mission", d: "To train the total child — mentally, educationally, emotionally and spiritually — using the best of ICT and pedagogy." },
+            { t: "Core Values", d: "Honesty · Passion for service · Professionalism · Commitment to excellence · Integrity." },
           ].map((b) => (
             <div key={b.t} className="bg-card rounded-3xl p-10 shadow-soft border border-border">
               <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Our {b.t}</p>
               <p className="mt-4 font-display text-2xl text-primary leading-snug">{b.d}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Anthems & Pledge */}
+      <section className="mx-auto max-w-7xl px-5 lg:px-8 py-24">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <p className="text-xs uppercase tracking-[0.3em] text-cocoa font-semibold mb-3">Identity</p>
+          <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary text-balance">The words we live by.</h2>
+          <p className="mt-4 text-muted-foreground">Our school anthem, the Nigerian national anthem, and the pledge — recited proudly at every assembly.</p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-6">
+          <article className="rounded-3xl bg-gradient-to-br from-primary to-primary/90 text-ivory p-8 shadow-elegant lg:row-span-2">
+            <div className="h-12 w-12 rounded-xl bg-gold text-gold-foreground flex items-center justify-center mb-5 shadow-gold">
+              <Music2 className="h-5 w-5" />
+            </div>
+            <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">School Anthem</p>
+            <h3 className="mt-2 font-display text-2xl">We are children of Diamond Standard</h3>
+            <p className="mt-5 leading-relaxed text-ivory/90 italic">
+              We are children of Diamond Standard Basic School.<br />
+              We are proud to say we are the best in what we do.<br />
+              Always we strive to learn all the discipline,<br />
+              Where we learn the basis of life — oh yes, we learn the basis of life.<br />
+              Then we say always, we say:<br />
+              <span className="not-italic font-display text-gold">"God guide us."</span>
+            </p>
+          </article>
+
+          <article className="rounded-3xl bg-card border border-border p-8 shadow-soft">
+            <div className="h-12 w-12 rounded-xl bg-gradient-gold text-gold-foreground flex items-center justify-center mb-5">
+              <Flag className="h-5 w-5" />
+            </div>
+            <p className="text-xs uppercase tracking-[0.3em] text-cocoa font-semibold">National Anthem</p>
+            <h3 className="mt-2 font-display text-xl text-primary">Nigeria, We Hail Thee</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground italic">
+              Nigeria, we hail thee, our own dear native land,<br />
+              Though tribe and tongue may differ, in brotherhood we stand,<br />
+              Nigerians all, and proud to serve our sovereign Motherland.
+            </p>
+          </article>
+
+          <article className="rounded-3xl bg-card border border-border p-8 shadow-soft">
+            <div className="h-12 w-12 rounded-xl bg-gradient-gold text-gold-foreground flex items-center justify-center mb-5">
+              <HandHeart className="h-5 w-5" />
+            </div>
+            <p className="text-xs uppercase tracking-[0.3em] text-cocoa font-semibold">National Pledge</p>
+            <h3 className="mt-2 font-display text-xl text-primary">I pledge to Nigeria…</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground italic">
+              I pledge to Nigeria my country, to be faithful, loyal and honest, to serve Nigeria with all my strength, to defend her unity, and uphold her honour and glory — so help me God.
+            </p>
+          </article>
         </div>
       </section>
 
