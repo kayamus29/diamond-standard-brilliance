@@ -29,6 +29,7 @@ export function Footer() {
             <li><Link to="/admissions" className="hover:text-gold">Admissions</Link></li>
             <li><Link to="/facilities" className="hover:text-gold">Facilities</Link></li>
             <li><Link to="/activities" className="hover:text-gold">Activities</Link></li>
+            <li><Link to="/events" className="hover:text-gold">Events & Gallery</Link></li>
           </ul>
         </div>
 
@@ -36,7 +37,7 @@ export function Footer() {
           <h4 className="text-sm font-semibold uppercase tracking-widest text-gold mb-4">Contact</h4>
           <ul className="space-y-3 text-sm text-ivory/80">
             <li className="flex gap-3"><MapPin className="h-4 w-4 mt-0.5 shrink-0 text-gold" /> Plot 31, A1 Road, F.H.A, Lugbe, Airport Road, Abuja, F.C.T.</li>
-            <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 shrink-0 text-gold" /> +234 800 000 0000</li>
+            <li className="flex gap-3"><Phone className="h-4 w-4 mt-0.5 shrink-0 text-gold" /> 0903 601 7856, 0908 527 5155, 0805 610 7325</li>
             <li className="flex gap-3"><Mail className="h-4 w-4 mt-0.5 shrink-0 text-gold" /> info@diamondstandard.sch.ng</li>
           </ul>
         </div>

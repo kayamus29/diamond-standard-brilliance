@@ -22,8 +22,8 @@ function ContactPage() {
       <section className="mx-auto max-w-7xl px-5 lg:px-8 py-20 grid lg:grid-cols-5 gap-10">
         <div className="lg:col-span-2 space-y-5">
           {[
-            { icon: MapPin, t: "Visit Us", d: "Plot 31, A1 Road, F.H.A, Lugbe, Airport Road, Abuja, F.C.T." },
-            { icon: Phone, t: "Call Us", d: "+234 800 000 0000" },
+            { icon: MapPin, t: "Visit Us", d: "Plot 8, A1 Road, Phase II FHA, Near Environmental Street, Lugbe — Abuja." },
+            { icon: Phone, t: "Call Us", d: "0903 601 7856  ·  0908 527 5155  ·  0805 610 7325" },
             { icon: Mail, t: "Email Us", d: "info@diamondstandard.sch.ng" },
             { icon: Clock, t: "School Hours", d: "Mon – Fri, 7:30 AM – 2:30 PM" },
           ].map((c) => (

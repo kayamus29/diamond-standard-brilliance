@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as FacilitiesRouteImport } from './routes/facilities'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AdmissionsRouteImport } from './routes/admissions'
 import { Route as ActivitiesRouteImport } from './routes/activities'
@@ -26,6 +27,11 @@ const LoginRoute = LoginRouteImport.update({
 const FacilitiesRoute = FacilitiesRouteImport.update({
   id: '/facilities',
   path: '/facilities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/activities': typeof ActivitiesRoute
   '/admissions': typeof AdmissionsRoute
   '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/facilities': typeof FacilitiesRoute
   '/login': typeof LoginRoute
 }
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/activities': typeof ActivitiesRoute
   '/admissions': typeof AdmissionsRoute
   '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/facilities': typeof FacilitiesRoute
   '/login': typeof LoginRoute
 }
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/activities': typeof ActivitiesRoute
   '/admissions': typeof AdmissionsRoute
   '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/facilities': typeof FacilitiesRoute
   '/login': typeof LoginRoute
 }
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/activities'
     | '/admissions'
     | '/contact'
+    | '/events'
     | '/facilities'
     | '/login'
   fileRoutesByTo: FileRoutesByTo
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/activities'
     | '/admissions'
     | '/contact'
+    | '/events'
     | '/facilities'
     | '/login'
   id:
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/activities'
     | '/admissions'
     | '/contact'
+    | '/events'
     | '/facilities'
     | '/login'
   fileRoutesById: FileRoutesById
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   ActivitiesRoute: typeof ActivitiesRoute
   AdmissionsRoute: typeof AdmissionsRoute
   ContactRoute: typeof ContactRoute
+  EventsRoute: typeof EventsRoute
   FacilitiesRoute: typeof FacilitiesRoute
   LoginRoute: typeof LoginRoute
 }
@@ -148,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/facilities'
       fullPath: '/facilities'
       preLoaderRoute: typeof FacilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -202,9 +222,19 @@ const rootRouteChildren: RootRouteChildren = {
   ActivitiesRoute: ActivitiesRoute,
   AdmissionsRoute: AdmissionsRoute,
   ContactRoute: ContactRoute,
+  EventsRoute: EventsRoute,
   FacilitiesRoute: FacilitiesRoute,
   LoginRoute: LoginRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
