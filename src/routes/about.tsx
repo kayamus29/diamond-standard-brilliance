@@ -37,18 +37,44 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-secondary/60 py-20">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid md:grid-cols-3 gap-6">
-          {[
-            { t: "Vision", d: "To create a unique institution focused on providing a world-class educational service of excellence at affordable cost." },
-            { t: "Mission", d: "To train the total child — mentally, educationally, emotionally and spiritually — using the best of ICT and pedagogy." },
-            { t: "Core Values", d: "Honesty · Passion for service · Professionalism · Commitment to excellence · Integrity." },
-          ].map((b) => (
-            <div key={b.t} className="bg-card rounded-3xl p-10 shadow-soft border border-border">
-              <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Our {b.t}</p>
-              <p className="mt-4 font-display text-2xl text-primary leading-snug">{b.d}</p>
-            </div>
-          ))}
+      {/* Vision · Core Values · Mission */}
+      <section className="bg-secondary/60 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="bg-card rounded-3xl p-8 md:p-10 shadow-soft border border-border">
+            <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Our Vision</p>
+            <p className="mt-4 font-display text-xl md:text-2xl text-primary leading-snug">
+              To create a unique institution focused on providing a world-class educational service for excellence at affordable cost.
+            </p>
+          </div>
+
+          <div className="bg-card rounded-3xl p-8 md:p-10 shadow-soft border border-border">
+            <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Our Core Values</p>
+            <ul className="mt-4 space-y-2.5">
+              {["Honesty", "Passion for service", "Professionalism", "Commitment to excellence", "Integrity"].map((v) => (
+                <li key={v} className="flex items-start gap-3 text-foreground">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
+                  <span className="font-display text-lg md:text-xl text-primary leading-snug">{v}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="bg-card rounded-3xl p-8 md:p-10 shadow-soft border border-border md:col-span-2 lg:col-span-1">
+            <p className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Our Mission</p>
+            <ol className="mt-4 space-y-4">
+              {[
+                "To provide a platform for the training of a total child who will be balanced mentally, educationally, emotionally and spiritually.",
+                "Assisting pupils to form a positive self image from the cradle.",
+                "To develop the intelligent and natural ability of pupils for excellent performance.",
+                "Making the best use of ICT in educating our students for excellent performance.",
+              ].map((m, i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="font-display text-lg text-gold shrink-0 leading-snug">{i + 1}.</span>
+                  <span className="text-sm md:text-base text-muted-foreground leading-relaxed">{m}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 

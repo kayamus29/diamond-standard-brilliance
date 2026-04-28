@@ -158,15 +158,15 @@ function HomePage() {
       </section>
 
       {/* MISSION STRIP */}
-      <section className="bg-primary text-ivory py-10">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid md:grid-cols-3 gap-8">
+      <section className="bg-primary text-ivory py-10 md:py-12">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 grid gap-8 md:grid-cols-3">
           {[
-            { t: "Our Vision", d: "Well-rounded, confident, responsible individuals who contribute positively to society." },
-            { t: "Our Mission", d: "Inspire independence, hard work, integrity and lifelong academic and moral excellence." },
-            { t: "Our Promise", d: "Every child known by name, challenged with care, and prepared for the world." },
+            { t: "Our Vision", d: "A world-class educational service for excellence — at affordable cost." },
+            { t: "Our Mission", d: "Train the total child — mentally, educationally, emotionally and spiritually — using the best of ICT." },
+            { t: "Our Core Values", d: "Honesty · Passion for service · Professionalism · Commitment to excellence · Integrity." },
           ].map((b) => (
             <div key={b.t}>
-              <h3 className="font-display text-xl text-gold mb-2">{b.t}</h3>
+              <h3 className="font-display text-lg md:text-xl text-gold mb-2">{b.t}</h3>
               <p className="text-sm text-ivory/80 leading-relaxed">{b.d}</p>
             </div>
           ))}
