@@ -75,7 +75,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 }}
-              className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-primary leading-[1.05] text-balance"
+              className="mt-6 font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-primary leading-[1.08] text-balance"
             >
               Nurturing minds.{" "}
               <span className="relative inline-block">
@@ -87,7 +87,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="mt-6 text-lg text-muted-foreground max-w-xl text-balance"
+              className="mt-5 md:mt-6 text-base md:text-lg text-muted-foreground max-w-xl text-balance"
             >
               A premier Crèche, Nursery & Primary school in Lugbe, Abuja — blending Nigerian, British and Montessori curricula since 2009.
             </motion.p>
@@ -97,10 +97,10 @@ function HomePage() {
               transition={{ delay: 0.15 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <Link to="/admissions" className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-7 py-3.5 font-semibold text-gold-foreground shadow-gold hover:-translate-y-0.5 transition">
+              <Link to="/admissions" className="inline-flex items-center gap-2 rounded-full bg-gradient-gold px-6 sm:px-7 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-gold-foreground shadow-gold hover:-translate-y-0.5 transition">
                 Apply Now <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-7 py-3.5 font-semibold text-primary hover:bg-secondary transition">
+              <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-card px-6 sm:px-7 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-primary hover:bg-secondary transition">
                 Book a Visit
               </Link>
             </motion.div>
@@ -109,12 +109,12 @@ function HomePage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6"
+              className="mt-10 md:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-6"
             >
               {STATS.map((s) => (
                 <div key={s.l}>
-                  <div className="font-display text-3xl font-semibold text-primary">{s.v}</div>
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">{s.l}</div>
+                  <div className="font-display text-2xl sm:text-3xl font-semibold text-primary">{s.v}</div>
+                  <div className="text-[11px] sm:text-xs uppercase tracking-wider text-muted-foreground mt-1">{s.l}</div>
                 </div>
               ))}
             </motion.div>
@@ -134,12 +134,12 @@ function HomePage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="absolute -bottom-6 -left-4 lg:-left-10 bg-card rounded-2xl p-5 shadow-elegant border border-border max-w-[260px]"
+              className="hidden sm:block absolute -bottom-6 -left-4 lg:-left-10 bg-card rounded-2xl p-4 sm:p-5 shadow-elegant border border-border max-w-[240px] sm:max-w-[260px]"
             >
               <div className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-full bg-gradient-gold flex items-center justify-center text-gold-foreground font-display font-bold text-lg">15+</div>
+                <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-full bg-gradient-gold flex items-center justify-center text-gold-foreground font-display font-bold">15+</div>
                 <div>
-                  <div className="font-display font-semibold text-primary">Years shaping</div>
+                  <div className="font-display font-semibold text-primary text-sm sm:text-base">Years shaping</div>
                   <div className="text-xs text-muted-foreground">future leaders in Abuja</div>
                 </div>
               </div>
@@ -148,7 +148,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="absolute -top-4 -right-2 lg:-right-6 bg-primary text-ivory rounded-2xl p-4 shadow-elegant max-w-[220px]"
+              className="hidden sm:block absolute -top-4 -right-2 lg:-right-6 bg-primary text-ivory rounded-2xl p-4 shadow-elegant max-w-[220px]"
             >
               <div className="flex gap-1 text-gold mb-1">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-3.5 w-3.5 fill-gold" />)}</div>
               <p className="text-xs leading-snug text-ivory/90">"A genuinely warm, excellent school." — Parent, Primary 3</p>
