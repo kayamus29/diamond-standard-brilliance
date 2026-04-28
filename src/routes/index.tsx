@@ -296,6 +296,40 @@ function HomePage() {
         </div>
       </section>
 
+      {/* UPCOMING EVENTS */}
+      <section className="bg-secondary/60 py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-cocoa font-semibold mb-3">Upcoming</p>
+              <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary text-balance">What's coming up.</h2>
+            </div>
+            <Link to="/events" className="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+              See all events <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {UPCOMING.map((e) => (
+              <article key={e.title} className="relative overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-soft hover:shadow-elegant transition-shadow">
+                <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gold/10" />
+                <div className="relative">
+                  <span className="inline-block bg-gradient-gold text-gold-foreground text-[11px] font-semibold uppercase tracking-widest px-3 py-1 rounded-full shadow-gold">
+                    {e.tag}
+                  </span>
+                  <h3 className="mt-5 font-display text-xl font-semibold text-primary leading-snug">{e.title}</h3>
+                  <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                    <li className="flex gap-2"><Calendar className="h-4 w-4 mt-0.5 text-gold shrink-0" /> {e.date}</li>
+                    <li className="flex gap-2"><Clock className="h-4 w-4 mt-0.5 text-gold shrink-0" /> {e.time}</li>
+                    <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-gold shrink-0" /> {e.venue}</li>
+                  </ul>
+                  <p className="mt-4 text-sm text-foreground/80 leading-relaxed">{e.desc}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* GALLERY */}
       <section className="mx-auto max-w-7xl px-5 lg:px-8 pb-24">
         <div className="text-center max-w-2xl mx-auto mb-12">
