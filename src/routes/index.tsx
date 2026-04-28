@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Award, BookOpen, Bus, GraduationCap, Heart, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Award, BookOpen, Bus, Calendar, Clock, GraduationCap, Heart, MapPin, ShieldCheck, Sparkles, Star } from "lucide-react";
 import heroImg from "@/assets/students-hero.png";
 import classroomImg from "@/assets/classroom.jpg";
 import montessoriImg from "@/assets/montessori.jpg";
@@ -53,6 +53,33 @@ const TESTIMONIALS = [
     name: "Dr. Funmi Adebayo",
     role: "Parent & paediatrician",
     quote: "Clean, secure, well-staffed. As a doctor I notice the small things — and Diamond Standard gets them right.",
+  },
+];
+
+const UPCOMING = [
+  {
+    tag: "Summer Coaching",
+    title: "Summer Blast — Skill Acquisition & Coaching",
+    date: "August 4 – 28, 2025",
+    time: "Mon – Thu · 9:00 AM – 1:00 PM",
+    venue: "Diamond Standard Campus, Lugbe",
+    desc: "Coding, Catering Craft, Graphics Design, Creative Arts — plus tailored teaching for the new class in September.",
+  },
+  {
+    tag: "Graduation",
+    title: "Graduation & Prize-Giving Day 2025",
+    date: "Thursday, 24th July 2025",
+    time: "9:00 AM",
+    venue: "Premiere Mini Stadium, FHA Lugbe",
+    desc: "Celebrating our 2024/2025 graduating set with cultural displays, drama, choreography and prize awards.",
+  },
+  {
+    tag: "Admissions",
+    title: "Admissions In Progress — 2025/26 Session",
+    date: "Open Now",
+    time: "Mon – Fri · 8:00 AM – 3:00 PM",
+    venue: "Plot 8, A1 Road, Lugbe",
+    desc: "Daycare · Nursery · Primary · JSS 1–3 · SS Classes. Secure your child's place today.",
   },
 ];
 
